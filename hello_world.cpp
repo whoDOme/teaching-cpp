@@ -2,12 +2,14 @@
 #include <climits>
 
 int main() {
-    std::cout << sizeof(short) << std::endl;
-    std::cout << sizeof(int) << std::endl;
-    std::cout << sizeof(long) << std::endl;
-    std::cout << sizeof(long long) << std::endl;
-    std::cout << CHAR_BIT << std::endl;
-    std::cout << 9 << std::endl;
+    {
+        if (int a = rand() > 100) {
+            std::cout << "> 100";
+        }
+        else {
+            std::cout << "< 100";
+        }
+    }
 
     return 0;
 }
