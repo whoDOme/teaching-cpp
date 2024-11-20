@@ -3,11 +3,11 @@
 
 int main() {
     {
-        if (int a = rand() > 100) {
-            std::cout << "> 100";
+        if (int a = rand(), b = 100; a > b) {
+            std::cout << a << b << "a" << std::endl;
         }
         else {
-            std::cout << "< 100";
+            std::cout << a << b << "b" << std::endl;
         }
     }
 
