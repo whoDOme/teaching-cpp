@@ -2,7 +2,7 @@
 #include <vector>
 #include <map>
 
-uint16_t CountPairs(const std::vector<int16_t>& values, int16_t k) {
+/* uint16_t CountPairs(const std::vector<int16_t>& values, int16_t k) {
     std::map<int16_t, uint16_t> values_count;
     for (const auto elem : values) {
         ++values_count[elem];
@@ -17,6 +17,19 @@ uint16_t CountPairs(const std::vector<int16_t>& values, int16_t k) {
         if (values_count.count(k - key)) {
             count_pairs += value * values_count[k - key];
         }
+    }
+
+    return count_pairs;
+} */
+uint16_t CountPairs(const std::vector<int16_t>& values, int16_t k) {
+    std:: map<int, size_t> values_count;
+    uint16_t count_pairs = 0;
+    for (const auto& value: values) {
+        int complement = k - value;
+        if (values_count.count(complement)) {
+            count_pairs += values_count[complement];
+        }
+        ++values_count[value];
     }
 
     return count_pairs;
